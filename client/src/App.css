@@ -1,0 +1,68 @@
+html,
+*{
+  padding: 0;
+}
+
+body{
+  overflow: auto;
+  padding: 3%;
+}
+
+html{
+  background-color: hsl(0, 0%, 13%)
+}
+
+nav{
+  background-color: hsl(0, 0%, 13%) !important;
+}
+
+.MuiGridListTile-tile, .MuiCardMedia-root{
+  cursor: pointer;
+}
+
+iframe {
+  width:100%;
+  height: 100%;
+}
+
+.carousel .control-dots {
+  position: relative !important;
+}
+li.dot{
+  width: 15px !important;
+  height: 15px !important;
+  margin: 0 15px !important;
+}
+
+/* .cursor{
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: purple;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 99999;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  transition: transform 0.2s;
+} */
+
+/* section{
+  position: fixed; 
+  top: 0%;
+  left: 5%;
+  width: 100%;
+  height: 100%;
+  background: url(/images/tizzy_kitchen.jpg) no-repeat 60% 50%;
+  background-attachment: fixed;
+  clip-path: circle(10px at center);
+} */
+
+
+
+.body{
+  font-size: 12px;
+}
