@@ -10,10 +10,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // API
-const users = require('./api/routes/users');
 const playlists = require('./api/routes/playlists');
 const videos = require('./api/routes/videos');
-app.use('/api/users', users);
 app.use('/api/playlists', playlists);
 app.use('/api/videos', videos);
 
