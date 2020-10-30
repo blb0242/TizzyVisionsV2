@@ -61,7 +61,7 @@ export default function Artists() {
     };
 
     useEffect(() => {
-        fetch("/api/playlists")
+        fetch("https://tizzy-visions-v2.herokuapp.com/api/playlists")
             .then(res => res.json())
             .then(ytPlaylists => {
                 //console.log(ytPlaylists)
