@@ -16,6 +16,10 @@ app.use('/api/users', users);
 app.use('/api/playlists', playlists);
 app.use('/api/videos', videos);
 
+app.get('/', (req, res) => {
+    console.log("HIIIIIIII")
+})
+
 
 app.use(express.static(path.join(__dirname, '../build')))
 app.get('*', (req, res) => {
