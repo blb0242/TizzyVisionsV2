@@ -2,8 +2,8 @@ const axios = require('axios');
 const express = require('express');
 const router = express.Router()
 require('dotenv').config();
-const Playlist = require('../../models/Playlist');
-let Video = require('../../models/Video');
+const Playlist = require('../../models/playlist.js');
+let Video = require('../../models/video.js');
 
 const API_key = process.env.YOUTUBE_DATA_KEY;
 const channelId = 'UCjFClAX21CTwdFeJGkdgTCA';
