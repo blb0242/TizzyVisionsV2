@@ -28,11 +28,7 @@ iframe {
 .carousel .control-dots {
   position: relative !important;
 }
-li.dot{
-  width: 15px !important;
-  height: 15px !important;
-  margin: 0 15px !important;
-}
+
 
 /* .cursor{
   position: fixed;

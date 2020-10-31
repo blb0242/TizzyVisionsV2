@@ -23,6 +23,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Link from '@material-ui/core/Link';
 import { NavLink } from "react-router-dom";
 import { Instagram as IGIcon, Facebook as FBIcon, Twitter as TwitterIcon, YouTube as YTIcon, Menu as MenuIcon  } from '@material-ui/icons';
+import { Grid } from "@material-ui/core";
 
 
 const useStyles = makeStyles(theme => ({
@@ -99,134 +100,136 @@ export default function SideNav(){
 
 
     return (
-        <div className="">
-            <div className="">
+        
+        <Grid 
+            container
+            direction="row"
+            alignItems="flex-start"
+            justify="space-between"
+        >
+            <Grid item xs={2} sm={6} >
                 <img
                     src='/images/bigTVlogo.png'
                     alt='Tizzy Visions Logo'
                 />
-            </div>
-            <Hidden smUp>
-                <Button
-                    className=""
-                    aria-controls='simple-menu'
-                    aria-haspopup='true'
-                    onClick={handleClick}
-                >
-                    <MenuIcon />
-                </Button>
-                <Menu
-                    id='simple-menu'
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >   
-                    
-                    <NavLink to="/music-videos">
-                        <MenuItem onClick={handleClose}>Music Videos</MenuItem>
-                    </NavLink>
-                    <NavLink to="/weddings">
-                        <MenuItem onClick={handleClose}>Weddings</MenuItem>
-                    </NavLink>
-                    <NavLink to="/vlogs">
-                        <MenuItem onClick={handleClose}>Vlogs</MenuItem>
-                    </NavLink>
-                    <NavLink to="/about">
-                        <MenuItem onClick={handleClose}>About</MenuItem>
-                    </NavLink>
-                </Menu>
-            </Hidden>
-            
-            <Hidden xsDown>
-            <List
-                component="nav"
-                aria-labelledby="nested-list-subheader"
-                
-                className={classes.root}
-                >
-                <NavLink to="/">
-                    <ListItem button>
-                        <ListItemText primary="Home" />
-                    </ListItem>
-                </NavLink>
-                <ListItem button onClick={() => handleClick2("film")}>
-                    <ListItemText primary="Film" />
-                    {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                    <ListItem button className={classes.nested} onClick={() => handleClick2("musicVideos")}>
-                        <ListItemText primary="Music Videos" />
-                        {open2 ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
-                    <Collapse in={open2} timeout="auto" unmountOnExit>
-                        <List component="div" disablePadding>
-                            <NavLink to="/artists">
-                                <ListItem button className={classes.nested2}>
-                                    <ListItemText primary="Artists" />
-                                </ListItem>
-                            </NavLink>
-                            <NavLink to="/music-videos">
-                                <ListItem button className={classes.nested2}>
-                                    <ListItemText primary="Music Videos" />
-                                </ListItem>
-                            </NavLink>
-                        </List>
-                    </Collapse>
-                        <NavLink to="/vlogs">
-                            <ListItem button className={classes.nested}>
-                                <ListItemText primary="Vlogs" />
-                            </ListItem>
+            </Grid>
+            <Grid item xs={2} sm={8} >
+                <Hidden smUp>
+                    <Button
+                        className=""
+                        aria-controls='simple-menu'
+                        aria-haspopup='true'
+                        onClick={handleClick}
+                    >
+                        <MenuIcon />
+                    </Button>
+                    <Menu
+                        id='simple-menu'
+                        anchorEl={anchorEl}
+                        keepMounted
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                    >   
+                        <NavLink to="/music-videos">
+                            <MenuItem onClick={handleClose}>Music Videos</MenuItem>
                         </NavLink>
                         <NavLink to="/weddings">
-                            <ListItem button className={classes.nested}>
-                                <ListItemText primary="Weddings" />
+                            <MenuItem onClick={handleClose}>Weddings</MenuItem>
+                        </NavLink>
+                        <NavLink to="/vlogs">
+                            <MenuItem onClick={handleClose}>Vlogs</MenuItem>
+                        </NavLink>
+                        <NavLink to="/about">
+                            <MenuItem onClick={handleClose}>About</MenuItem>
+                        </NavLink>
+                    </Menu>
+                </Hidden>
+                <Hidden xsDown>
+                    <List
+                        component="nav"
+                        aria-labelledby="nested-list-subheader"
+                        
+                        className={classes.root}
+                        >
+                        <NavLink to="/">
+                            <ListItem button>
+                                <ListItemText primary="Home" />
+                            </ListItem>
+                        </NavLink>
+                        <ListItem button onClick={() => handleClick2("film")}>
+                            <ListItemText primary="Film" />
+                            {open ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+                        <Collapse in={open} timeout="auto" unmountOnExit>
+                            <List component="div" disablePadding>
+                                <ListItem button className={classes.nested} onClick={() => handleClick2("musicVideos")}>
+                                    <ListItemText primary="Music Videos" />
+                                    {open2 ? <ExpandLess /> : <ExpandMore />}
+                                </ListItem>
+                                <Collapse in={open2} timeout="auto" unmountOnExit>
+                                    <List component="div" disablePadding>
+                                        <NavLink to="/artists">
+                                            <ListItem button className={classes.nested2}>
+                                                <ListItemText primary="Artists" />
+                                            </ListItem>
+                                        </NavLink>
+                                        <NavLink to="/music-videos">
+                                            <ListItem button className={classes.nested2}>
+                                                <ListItemText primary="Music Videos" />
+                                            </ListItem>
+                                        </NavLink>
+                                    </List>
+                                </Collapse>
+                                <NavLink to="/vlogs">
+                                    <ListItem button className={classes.nested}>
+                                        <ListItemText primary="Vlogs" />
+                                    </ListItem>
+                                </NavLink>
+                                <NavLink to="/weddings">
+                                    <ListItem button className={classes.nested}>
+                                        <ListItemText primary="Weddings" />
+                                    </ListItem>
+                                </NavLink>
+                            </List>
+                        </Collapse>
+                        <ListItem button>
+                            <ListItemText primary="Photography" />
+                        </ListItem>
+                        <Link target="_blank" href="https://www.depop.com/tizzyv/">
+                            <ListItem button>
+                                <ListItemText primary="Shop" />
+                            </ListItem>
+                        </Link>
+                        <NavLink to="/about">
+                            <ListItem button>
+                                <ListItemText primary="About" />
                             </ListItem>
                         </NavLink>
                     </List>
-                </Collapse>
-                <ListItem button>
-                    <ListItemText primary="Photography" />
-                </ListItem>
-                <Link target="_blank" href="https://www.depop.com/tizzyv/">
-                    <ListItem button>
-                        <ListItemText primary="Shop" />
-                    </ListItem>
-                </Link>
-                
-                <NavLink to="/about">
-                    <ListItem button>
-                        <ListItemText primary="About" />
-                    </ListItem>
-                </NavLink>
-                
-                
-                
-                
-            </List>
-                
-                <br />
-                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tizzy_visions/">
-                    <IGIcon fontSize="large" style={{ color: "#e95950" }} />
-                </a>
-                
-                <a target="_blank" rel="noopener noreferrer" href="https://m.facebook.com/tizzyvisions/">
-                    <FBIcon fontSize="large" style={{ color: "#3b5998" }} />
-                </a>
-                
-                <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/tizzy_visions">
-                    <TwitterIcon fontSize="large" style={{ color: "#55acee" }} />
-                </a>
-                
-                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CKTIZZY/">
-                    <YTIcon fontSize="large" style={{ color: "#ff0000" }} />
-                </a> 
-                
-            </Hidden>
-            
-        </div>
+                        
+                    <br />
+                    <Grid 
+                        container
+                        direction="row"
+                        alignItems="center"
+                        justify="space-evenly"
+                    >
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/tizzy_visions/">
+                            <IGIcon fontSize="large" style={{ color: "#e95950" }} />
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://m.facebook.com/tizzyvisions/">
+                            <FBIcon fontSize="large" style={{ color: "#3b5998" }} />
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/tizzy_visions">
+                            <TwitterIcon fontSize="large" style={{ color: "#55acee" }} />
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CKTIZZY/">
+                            <YTIcon fontSize="large" style={{ color: "#ff0000" }} />
+                        </a> 
+                    </Grid>
+                </Hidden>
+            </Grid>
+        </Grid>
     );
 };
 

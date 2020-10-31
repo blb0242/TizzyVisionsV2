@@ -27,10 +27,10 @@ export default function App() {
     direction="row"
     >
       <Router>
-        <Grid item xs={12} sm={4} md={2}>
+        <Grid item xs={12} sm={4} md={3}>
           <SideNav />
         </Grid>
-        <Grid item xs={12} sm={8} md={10}>
+        <Grid item xs>
           <Switch>
             <Route exact path="/">
               <Home />
