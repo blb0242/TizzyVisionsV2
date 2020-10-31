@@ -18,7 +18,6 @@ export default function Home() {
     // const { loading = false } = props;
     const [homeVideo, setHomeVideo] = useState(null);
     const classes = useStyles();
-    const play = "./images/play-button.png";
 
     const imageClick = (e) => {
         var width = $(e.target)[0].clientWidth;
