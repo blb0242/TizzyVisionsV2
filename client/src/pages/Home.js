@@ -15,17 +15,16 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function Home() {
-   // const { loading = false } = props;
+    // const { loading = false } = props;
     const [homeVideo, setHomeVideo] = useState(null);
     const classes = useStyles();
     const play = "./images/play-button.png";
 
     const imageClick = (e) => {
-    var width = $(e.target)[0].clientWidth;
-    var height = $(e.target)[0].clientHeight;
-   
-    $(e.target).html('<iframe width="'+ width + '" height="' +height +'" src="https://www.youtube.com/embed/' + e.target.id + '?autoplay=1" frameBorder="0" allow="accelerometer, autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-        
+        var width = $(e.target)[0].clientWidth;
+        var height = $(e.target)[0].clientHeight;
+        $(e.target).html('<iframe width="'+ width + '" height="' +height +'" src="https://www.youtube.com/embed/' + e.target.id + '?autoplay=1" frameBorder="0" allow="accelerometer, autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            
     } 
     useEffect(() => {
         axios
@@ -76,21 +75,6 @@ export default function Home() {
                                 xs={12}
                             >
                                 <Card 
-                                    
-                                    onMouseEnter = {() => {
-                                        const cursor = $(".cursor")
-                                        cursor.css({
-                                            transform: "scale(3.2)",
-                                            'background-image': `url(${play})`
-                                        })
-                                    }}
-                                    onMouseLeave = {() => {
-                                        const cursor = $(".cursor")
-                                        cursor.css({
-                                            transform: "scale(1)",
-                                                'background-image': "unset"
-                                        })
-                                    }}
                                     onClick={imageClick}
                                 >
                                     <CardMedia
