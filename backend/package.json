@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "deploy": "git add . && git commit -m 'Backend updated' && git push origin main && git subtree push --prefix backend heroku master"
   },
   "author": "",
   "license": "ISC",
