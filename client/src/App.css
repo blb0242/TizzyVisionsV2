@@ -30,6 +30,11 @@ iframe {
 }
 
 
+li.slide.selected>div>img {
+  height: 0;
+}
+
+
 /* .cursor{
   position: fixed;
   width: 20px;

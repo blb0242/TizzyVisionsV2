@@ -130,6 +130,9 @@ export default function SideNav(){
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >   
+                        <NavLink to="/">
+                            <MenuItem onClick={handleClose}>Home</MenuItem>
+                        </NavLink>
                         <NavLink to="/music-videos">
                             <MenuItem onClick={handleClose}>Music Videos</MenuItem>
                         </NavLink>
@@ -139,6 +142,9 @@ export default function SideNav(){
                         <NavLink to="/vlogs">
                             <MenuItem onClick={handleClose}>Vlogs</MenuItem>
                         </NavLink>
+                        <Link target="_blank" href="https://www.depop.com/tizzyv/">
+                            <MenuItem onClick={handleClose}>Shop</MenuItem>
+                        </Link>
                         <NavLink to="/about">
                             <MenuItem onClick={handleClose}>About</MenuItem>
                         </NavLink>

@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(2, 4, 3),
       },
     media: {
-        height: "40%"
+        height: "500px"
     }
 }));
 
@@ -52,18 +52,17 @@ export default function ModalComponent(props) {
             <Grid 
                 container 
                 direction="column"
-                justify="center"
                 alignItems="center"
             >
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} >
                     <h2 id="simple-modal-title">{title ? title : "Music Videos"}</h2>
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                <Grid item xs={12} >
                     <p id="simple-modal-description">{description }</p>
                 </Grid>
-                <Grid item xs={12} sm={9} md={10}>
-                    <Card className={classes.media} raised>
-                        <Carousel showArrows={true} selectedItem={props.video} dynamicHeight={true} onClickThumb={selectVideo}>
+                <Grid item xs={12} sm={10} md={8}>
+                    <Card raised>
+                        <Carousel showArrows={true} selectedItem={props.video} onClickThumb={selectVideo}>
                             {props.playlist.map((video, index) => 
                                 (
                                     <div key={video.title}>
@@ -71,7 +70,7 @@ export default function ModalComponent(props) {
                                             title={video.title}
                                             id={video._id}
                                             style={{position:"absolute", width:"100%", margin:0}}
-                                            src={"https://www.youtube.com/embed/" + video.vid /*+ (index === props.video ? "?autoplay=1" : "")*/}
+                                            src={"https://www.youtube.com/embed/" + video.vid + (index === props.video ? "?autoplay=1" : "")}
                                             frameBorder="0"
                                             allow="accelerometer, autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen

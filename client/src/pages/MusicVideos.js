@@ -76,6 +76,7 @@ export default function MusicVideos() {
 
     return (
         <>
+            <h1>Music Videos</h1>   
             <GridList cellHeight={100} spacing={5} className={classes.gridList}>
                 {videos.map((video, index) => (
                     <GridListTile key={video.poster} cols={index === 0 || index === 3 || index === 6 ? 2 : 1} rows={index === 0 || index === 3 || index === 6 ? 2 : 1}>

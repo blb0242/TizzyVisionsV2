@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
     media: {
-        height: "800px"
+        height: "400px"
     }
 }));
 
@@ -56,7 +56,7 @@ export default function Home() {
                         item 
                         xs={12}
                     >
-                        <Skeleton variant="rect" height={800}/> 
+                        <Skeleton variant="rect" height={400}/> 
                     </Grid>
                 </Grid>
                  : homeVideo.length === 0 ? (
@@ -69,13 +69,14 @@ export default function Home() {
                             direction="row"
                             justify="center"
                             alignItems="center"
+                            key={v._id}
                         >
                             <Grid 
                                 item 
                                 xs={12}
                             >
                                 <Card 
-                                    key={v._id}
+                                    
                                     onMouseEnter = {() => {
                                         const cursor = $(".cursor")
                                         cursor.css({
