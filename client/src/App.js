@@ -21,16 +21,18 @@ export default function App() {
 
 
   return (
-    <Grid 
-    container
-    spacing={4}
-    direction="row"
-    >
+    
       <Router>
-        <Grid item xs={12} sm={4} md={3}>
+        <Grid
+  container
+  direction="row"
+  justify="space-around"
+  spacing={6}
+>
+        <Grid item xs={12} sm={3} >
           <SideNav />
         </Grid>
-        <Grid item xs>
+        <Grid  item xs={12} sm={8} >
           <Switch>
             <Route exact path="/">
               <Home />
@@ -54,8 +56,7 @@ export default function App() {
             </Route>
           </Switch>
         </Grid>
+        </Grid>
       </Router>
-      {/* <Cursor /> */}
-    </Grid>
   );
 }

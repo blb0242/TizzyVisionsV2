@@ -24,6 +24,10 @@ import Link from '@material-ui/core/Link';
 import { NavLink } from "react-router-dom";
 import { Instagram as IGIcon, Facebook as FBIcon, Twitter as TwitterIcon, YouTube as YTIcon, Menu as MenuIcon  } from '@material-ui/icons';
 import { Grid } from "@material-ui/core";
+import PersistentDrawerLeft from "./PersistentDrawerLeft";
+import { Icon, InlineIcon } from '@iconify/react';
+import vimeoIcon from '@iconify-icons/mdi/vimeo';
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -101,55 +105,30 @@ export default function SideNav(){
 
     return (
         
-        <Grid 
-            container
-            direction="row"
-            alignItems="flex-start"
-            justify="space-between"
-        >
-            <Grid item xs={2} sm={6} >
-                <img
-                    src='/images/bigTVlogo.png'
-                    alt='Tizzy Visions Logo'
-                />
-            </Grid>
-            <Grid item xs={2} sm={8} >
-                <Hidden smUp>
-                    <Button
-                        className=""
-                        aria-controls='simple-menu'
-                        aria-haspopup='true'
-                        onClick={handleClick}
-                    >
-                        <MenuIcon />
-                    </Button>
-                    <Menu
-                        id='simple-menu'
-                        anchorEl={anchorEl}
-                        keepMounted
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                    >   
-                        <NavLink to="/">
-                            <MenuItem onClick={handleClose}>Home</MenuItem>
-                        </NavLink>
-                        <NavLink to="/music-videos">
-                            <MenuItem onClick={handleClose}>Music Videos</MenuItem>
-                        </NavLink>
-                        <NavLink to="/weddings">
-                            <MenuItem onClick={handleClose}>Weddings</MenuItem>
-                        </NavLink>
-                        <NavLink to="/vlogs">
-                            <MenuItem onClick={handleClose}>Vlogs</MenuItem>
-                        </NavLink>
-                        <Link target="_blank" href="https://www.depop.com/tizzyv/">
-                            <MenuItem onClick={handleClose}>Shop</MenuItem>
-                        </Link>
-                        <NavLink to="/about">
-                            <MenuItem onClick={handleClose}>About</MenuItem>
-                        </NavLink>
-                    </Menu>
+         
+        <Grid
+        container
+        direction="column"
+        justify="space-between"
+        alignItems="stretch"
+      >     
+            <Grid>
+            <Hidden xsDown>
+                    <img
+                        src='/images/bigTVlogo.png'
+                        alt='Tizzy Visions Logo'
+                    />
                 </Hidden>
+            </Grid>
+                
+                
+                <Grid>
+                    <Hidden smUp>
+                        <PersistentDrawerLeft />
+                    </Hidden>
+                </Grid>
+                
+                <Grid>
                 <Hidden xsDown>
                     <List
                         component="nav"
@@ -212,8 +191,6 @@ export default function SideNav(){
                             </ListItem>
                         </NavLink>
                     </List>
-                        
-                    <br />
                     <Grid 
                         container
                         direction="row"
@@ -232,10 +209,16 @@ export default function SideNav(){
                         <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CKTIZZY/">
                             <YTIcon fontSize="large" style={{ color: "#ff0000" }} />
                         </a> 
+                        <a target="_blank" rel="noopener norederrer" href="https://vimeo.com/tizzyvisions">
+                            <Icon icon={vimeoIcon} width="2em"/>
+                        </a>
                     </Grid>
                 </Hidden>
+                </Grid>
+                
+            
             </Grid>
-        </Grid>
+            
     );
 };
 

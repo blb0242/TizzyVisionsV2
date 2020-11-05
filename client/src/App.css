@@ -8,8 +8,8 @@ body{
   padding: 3%;
 }
 
-html{
-  background-color: hsl(0, 0%, 13%)
+html, body{
+  background-color: hsl(0, 0%, 13%) !important;
 }
 
 nav{

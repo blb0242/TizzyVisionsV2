@@ -1,6 +1,22 @@
 import React from 'react';
 import $ from 'jquery';
 import Grid from "@material-ui/core/Grid";
+import { GridList, GridListTile } from '@material-ui/core';
+
+const tileData = [
+    {
+        img: "/images/tizzynewlogostanding.jpg",
+        title: 'Image',
+        author: 'author',
+        cols: 2,
+    },
+    // {
+    //     img: "/images/tizzy_kitchen.jpg",
+    //     title: 'Image',
+    //     author: 'author',
+    //     cols: 1,
+    // }
+]
 
 export default function About() {
     // let w = $("section")
@@ -13,16 +29,24 @@ export default function About() {
             <h1>About Tizzy</h1>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
-                    <img alt="Chayce Tisdale" src="/images/tizzynewlogostanding.jpg" />
+                        {/* <img alt="Chayce Tisdale" src="/images/tizzynewlogostanding.jpg" /> */}
+                        <GridList cellHeight={400} cols={2}>
+                            {tileData.map((tile) => (
+                                <GridListTile key={tile.img} cols={tile.cols || 1} style={{ height: 'auto' }}>
+                                <img src={tile.img} alt={tile.title} />
+                                </GridListTile>
+                            ))}
+                        </GridList>
                 </Grid>
+                
                 <Grid item xs={12} sm={6}>
                     <div className="body">
-                        <p>
+                        {/* <p>
                             Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
                         </p>
                         <p>
                             Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum
-                        </p>
+                        </p> */}
                         
                     </div>
                 </Grid>

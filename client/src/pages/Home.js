@@ -7,9 +7,10 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import $ from 'jquery';
 import { makeStyles } from "@material-ui/core/styles";
 
+
 const useStyles = makeStyles(theme => ({
     media: {
-        height: "400px"
+        height: "600px"
     }
 }));
 
@@ -49,12 +50,13 @@ export default function Home() {
                     direction="row"
                     justify="center"
                     alignItems="center"
+                    className="home-grid"
                 >
                     <Grid 
                         item 
                         xs={12}
                     >
-                        <Skeleton variant="rect" height={400}/> 
+                        <Skeleton variant="rect" animation="wave" height={600}/> 
                     </Grid>
                 </Grid>
                  : homeVideo.length === 0 ? (
