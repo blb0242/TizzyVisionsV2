@@ -6,21 +6,21 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+// import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import MailIcon from '@material-ui/icons/Mail';
 import { Collapse, Grid } from '@material-ui/core';
 import { NavLink, Link } from 'react-router-dom';
 import { ExpandLess, ExpandMore } from '@material-ui/icons';
 import { Instagram as IGIcon, Facebook as FBIcon, Twitter as TwitterIcon, YouTube as YTIcon } from '@material-ui/icons';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon} from '@iconify/react';
 import vimeoIcon from '@iconify-icons/mdi/vimeo';
 
 const drawerWidth = 240;
@@ -230,7 +230,7 @@ export default function PersistentDrawerLeft() {
             <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CKTIZZY/">
                 <YTIcon fontSize="large" style={{ color: "#ff0000" }} />
             </a> 
-            <a target="_blank" rel="noopener norederrer" href="https://vimeo.com/tizzyvisions">
+            <a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/tizzyvisions">
                 <Icon icon={vimeoIcon} width="2em"/>
             </a>
         </Grid>

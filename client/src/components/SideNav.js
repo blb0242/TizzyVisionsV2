@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import Paper from "@material-ui/core/Paper";
-import MenuItem from "@material-ui/core/MenuItem";
+// import MenuItem from "@material-ui/core/MenuItem";
 // import MenuList from "@material-ui/core/MenuList";
 // import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
@@ -14,18 +14,18 @@ import Collapse from '@material-ui/core/Collapse';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 // import StarBorder from '@material-ui/icons/StarBorder';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
+// import Button from '@material-ui/core/Button';
+// import Menu from '@material-ui/core/Menu';
 import { makeStyles } from "@material-ui/core/styles";
 // import json2mq from "json2mq";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Hidden from '@material-ui/core/Hidden';
 import Link from '@material-ui/core/Link';
 import { NavLink } from "react-router-dom";
-import { Instagram as IGIcon, Facebook as FBIcon, Twitter as TwitterIcon, YouTube as YTIcon, Menu as MenuIcon  } from '@material-ui/icons';
+import { Instagram as IGIcon, Facebook as FBIcon, Twitter as TwitterIcon, YouTube as YTIcon } from '@material-ui/icons';
 import { Grid } from "@material-ui/core";
 import PersistentDrawerLeft from "./PersistentDrawerLeft";
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import vimeoIcon from '@iconify-icons/mdi/vimeo';
 
 
@@ -84,15 +84,15 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function SideNav(){
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    //const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleClick = event => {
-        setAnchorEl(event.currentTarget);
-    };
+    // const handleClick = event => {
+    //     setAnchorEl(event.currentTarget);
+    // };
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+    // const handleClose = () => {
+    //     setAnchorEl(null);
+    // };
     const classes = useStyles();
 
     const [open, setOpen] = useState(false);
@@ -209,7 +209,7 @@ export default function SideNav(){
                         <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/CKTIZZY/">
                             <YTIcon fontSize="large" style={{ color: "#ff0000" }} />
                         </a> 
-                        <a target="_blank" rel="noopener norederrer" href="https://vimeo.com/tizzyvisions">
+                        <a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/tizzyvisions">
                             <Icon icon={vimeoIcon} width="2em"/>
                         </a>
                     </Grid>
