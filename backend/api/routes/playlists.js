@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router()
 require('dotenv').config();
 const Playlist = require('../../models/playlist.js');
-let Video = require('../../models/video.js');
+const Video = require('../../models/video.js');
 
 const API_key = process.env.YOUTUBE_DATA_KEY;
 const channelId = 'UCjFClAX21CTwdFeJGkdgTCA';
@@ -13,6 +13,50 @@ let maxVideoResults = 5;
 const getPlaylists = "https://www.googleapis.com/youtube/v3/playlists";
 const getPlaylistItems = "https://www.googleapis.com/youtube/v3/playlistItems";
 const subs = [];
+
+// let checkYTPlaylist = async () => {
+// 	let response = await axios.get(getPlaylists,{
+// 		params: { 
+// 			part: "snippet", 
+// 			channelId: channelId, 
+// 			maxResults: 20, 
+// 			key: API_key
+// 		}
+// 	})
+// 	.then(res => {return res.data.items})
+// 	.then(res => {
+// 		res.map((item) => {
+// 			axios.get(getPlaylistItems,{
+// 				params: { 
+// 					part: "snippet", 
+// 					playlistId: item.id,
+// 					maxResults: 10, 
+// 					key: API_key
+// 				}
+// 			})
+// 			.then(res => console.log(res.data.items))
+// 			.catch(err => console.log(err))
+// 		})
+// 	})
+// 	.catch(err => console.log(err))
+// }
+
+let Vimeo = require('vimeo').Vimeo;
+let client = new Vimeo("a7de3c26204cd67ddfc99c3b4fdbb8f4414f6a1e", "mP/B4lnj1pSkrEe6Jao2qAvVxqwuH4aD5Su+QIaw72sKXpVgkzqlJHwhZiVuOkZX64BraMhixS3OvmYhmBfFdClOlT6v2QkpRIW1fqVUgVo5Xrnl4HT12igiH19DUNuo", "f0d974910a00caa82993c3d6337f7db1");
+
+let checkVimeo = () => {
+	client.request({
+		method: 'GET',
+		path: '/users/42598193/videos'
+	  }, function (error, body, status_code, headers) {
+		if (error) {
+		  console.log(error);
+		}
+	  
+		console.log(body);
+	  })
+}
+
 
 
 router.get('/', (req, res) => {
@@ -52,9 +96,8 @@ async function getPlaylistsInfo () {
 	})
 	.then(function (playlists) {
 		ytPlaylists = playlists.map(pl => pl.id) // YT Playlists IDs
-		//console.log(ytPlaylists);
 		playlists.map(pl => {
-		const list = pl
+			const list = pl
 			pl = pl.id
 			Playlist.find({ "pid": list.id })
 				.then(p => {
@@ -94,7 +137,7 @@ async function getPlaylistsInfo () {
 				})
 				.catch(err => console.log(err))
 			
-		}, 4000);
+		}, 1000);
 	})
 	
 }
@@ -153,5 +196,13 @@ router.route('/update/:id').put((req,res) => {
 
 router.route('/addYouTube').post((req,res) => {
 	getPlaylistsInfo();
+});
+
+router.route('/checkYTPlaylist').get((req,res) => {
+	checkYTPlaylist();
+});
+
+router.route('/checkVimeo').get((req,res) => {
+	checkVimeo();
 });
 module.exports = router 
