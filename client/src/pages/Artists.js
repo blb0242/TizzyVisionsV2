@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import ModalComponent from "../components/ModalComponent";
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import { GridListTileBar } from "@material-ui/core";
 
 
 const useStyles = makeStyles(theme => ({
@@ -61,12 +62,12 @@ export default function Artists() {
     };
 
     useEffect(() => {
-        fetch("https://tizzy-visions-v2.herokuapp.com/api/playlists")
+        fetch("/api/playlists")
             .then(res => res.json())
             .then(ytPlaylists => {
                 //console.log(ytPlaylists)
                 let checkTitle = (list) => {
-                    return list.title ? !list.title.includes("Film") && !list.title.includes("Vlog") : null;
+                    return list.title ? !list.title.includes("Film") && !list.title.includes("Vlog") && !list.title.includes("Music Videos") : null;
                 }
                 let musicVideos = ytPlaylists.filter(checkTitle)
                 setPlaylists(musicVideos)
@@ -76,11 +77,16 @@ export default function Artists() {
 
     return (
         <>
+        
             <GridList cellHeight={100} spacing={8} className={classes.gridList}>
                 {playlists.map((playlist, index) => (
                     <GridListTile key={index} cols={index === 0 || index === 3 || index === 6 ? 2 : 1} rows={index === 0 || index === 3 || index === 6 ? 2 : 1}>
                         <img onClick={() => handleOpen(playlist)} src={playlist.videos[0].poster} alt={playlist.title} />
-                        
+                        <GridListTileBar
+                            title={playlist.title}
+                            titlePosition="bottom"
+                            className={classes.titleBar}
+                        />
                     </GridListTile>
                 ))}
             </GridList>

@@ -26,7 +26,7 @@ export const Vlogs = () => {
     useEffect(() => {
         let isMounted = true;
 
-        fetch("https://tizzy-visions-v2.herokuapp.com/api/playlists")
+        fetch("api/playlists")
             .then(res => res.json())
             .then(ytPlaylists => {
                if (isMounted) setPlaylists(ytPlaylists)

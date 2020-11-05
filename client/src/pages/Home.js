@@ -28,7 +28,7 @@ export default function Home() {
     } 
     useEffect(() => {
         axios
-            .get("https://tizzy-visions-v2.herokuapp.com/api/playlists")
+            .get("/api/playlists")
                 .then(reel => {
                     console.log(reel.data)
                     reel.data.map((playlist) => {

@@ -27,7 +27,7 @@ export const Weddings = () => {
         let isMounted = true;
 
         axios
-			.get("https://tizzy-visions-v2.herokuapp.com/api/playlists")
+			.get("/api/playlists")
             .then(playlists => {
                 console.log(playlists.data)
                if (isMounted) setPlaylists(playlists.data.filter(playlist => playlist.pid === "PLf7I7Yk_q_uhmwgyjR0f_fH7Eae-TTu8h"))

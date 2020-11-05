@@ -61,7 +61,7 @@ export default function MusicVideos() {
     };
 
     useEffect(() => {
-        fetch("https://tizzy-visions-v2.herokuapp.com/api/playlists")
+        fetch("/api/playlists")
             .then(res => res.json())
             .then(ytPlaylists => {
                 //console.log(ytPlaylists)

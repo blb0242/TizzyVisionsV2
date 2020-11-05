@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'http://127.0.0.1:5020',
+      target: 'https://tizzy-visions-v2.herokuapp.com/',
       changeOrigin: true,
     })
   );

@@ -47,7 +47,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://127.0.0.1:5020",
+  "proxy": "https://tizzy-visions-v2.herokuapp.com/",
   "secure": false,
   "devDependencies": {
     "@iconify-icons/mdi": "^1.0.19",
