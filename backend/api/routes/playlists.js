@@ -194,7 +194,7 @@ router.route('/update/:id').put((req,res) => {
 	console.log(a)
 });
 
-router.route('/addYouTube').post((req,res) => {
+router.route('/addYouTube').get((req,res) => {
 	getPlaylistsInfo();
 });
 
