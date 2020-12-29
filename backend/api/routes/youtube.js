@@ -11,7 +11,7 @@ const getPlaylistItems = "https://www.googleapis.com/youtube/v3/playlistItems";
 
 
 router.get('/', (req, res) => {
-    res.send(req.query.hub_challenge)
+    res.send(req.params['hub_challenge'])
 })
 
 
