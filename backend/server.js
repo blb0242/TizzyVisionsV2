@@ -12,8 +12,10 @@ app.use(cors());
 // API
 const playlists = require('./api/routes/playlists');
 const videos = require('./api/routes/videos');
+const youtube = require('./api/routes/youtube');
 app.use('/api/playlists', playlists);
 app.use('/api/videos', videos);
+app.use('/api/youtube', youtube);
 
 app.get('/', (req, res) => {
     console.log("HIIIIIIII")
