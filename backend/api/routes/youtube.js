@@ -17,5 +17,13 @@ router.get('/', (req, res) => {
     
 })
 
+router.post('/', (req, res) => {
+    //res.send(req.query.hub.challenge)
+    console.log(res)
+    res.json()
+    
+    
+})
+
 
 module.exports = router 
