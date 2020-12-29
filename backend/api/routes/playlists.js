@@ -153,13 +153,13 @@ function addVideosFromYouTubeByPlaylist(pid, maxResults) {
 		}
 	})
 	.then(response => {
-		//console.log(response.data.items[0]);
+		console.log(response.data.items[0].snippet.thumbnails.maxres);
 		let playlistItems = response.data.items.map(video => {
 			// Save video to Databse by PlaylistID
 			let v = {}
 			v.vid = video.snippet.resourceId.videoId
 			v.title = video.snippet.title
-			v.poster = video.snippet.thumbnails.maxres.url
+			v.poster = video.snippet.thumbnails.maxres ? video.snippet.thumbnails.maxres.url : ''
 			v.pid = video.snippet.playlistId
 			//console.log(v)
 
@@ -194,7 +194,7 @@ router.route('/update/:id').put((req,res) => {
 	console.log(a)
 });
 
-router.route('/addYouTube').get((req,res) => {
+router.route('/addYouTube').post((req,res) => {
 	getPlaylistsInfo();
 });
 
