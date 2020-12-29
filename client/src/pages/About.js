@@ -5,17 +5,25 @@ import { GridList, GridListTile } from '@material-ui/core';
 
 const tileData = [
     {
-        img: "/images/tizzynewlogostanding.jpg",
+        img: "/images/tizzy_face_down.JPG",
         title: 'Image',
         author: 'author',
         cols: 2,
     },
-    // {
-    //     img: "/images/tizzy_kitchen.jpg",
-    //     title: 'Image',
-    //     author: 'author',
-    //     cols: 1,
-    // }
+    {
+        img: "/images/tizzy_stance.JPG",
+        title: 'Image',
+        author: 'author',
+        cols: 1,
+    },
+    {
+        img: "/images/tizzy_back.JPG",
+        title: 'Image',
+        author: 'author',
+        cols: 1,
+    }
+   
+
 ]
 
 export default function About() {

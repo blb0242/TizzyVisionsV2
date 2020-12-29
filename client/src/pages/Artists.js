@@ -78,7 +78,7 @@ export default function Artists() {
     return (
         <>
         
-            <GridList cellHeight={100} spacing={8} className={classes.gridList}>
+            <GridList cellHeight="auto" spacing={8} className={classes.gridList}>
                 {playlists.map((playlist, index) => (
                     <GridListTile key={index} cols={index === 0 || index === 3 || index === 6 ? 2 : 1} rows={index === 0 || index === 3 || index === 6 ? 2 : 1}>
                         <img onClick={() => handleOpen(playlist)} src={playlist.videos[0].poster} alt={playlist.title} />
