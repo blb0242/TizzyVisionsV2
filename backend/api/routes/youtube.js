@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 require('dotenv').config();
 const axios = require('axios');
-const Video = require('../../models/video.js');
+const Subscription = require('../../models/youtube.js');
+
 
 const API_key = process.env.YOUTUBE_DATA_KEY;
 const uploadsId = 'UUjFClAX21CTwdFeJGkdgTCA';
@@ -14,14 +15,14 @@ router.get('/', (req, res) => {
     //res.send(req.query.hub.challenge)
     res.status(200).send(req.query['hub.challenge'])
     console.log(res)
-    const content = 'Some content!'
-  
-  try {
-    const data = fs.writeFileSync('test.txt', content)
-    //file written successfully
-  } catch (err) {
-    console.error(err)
-  }
+    Subscription.updateOne(
+        { channelID : 'UCOh4avN_YMs3JcUgBVhJfGg'},
+        { $set: {
+            subscribe : true
+        }},
+        {upsert:true},
+        function(error){console.log(error);}  
+    );
     
 })
 
