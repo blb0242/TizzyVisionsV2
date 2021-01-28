@@ -14,6 +14,14 @@ router.get('/', (req, res) => {
     //res.send(req.query.hub.challenge)
     res.status(200).send(req.query['hub.challenge'])
     console.log(res)
+    const content = 'Some content!'
+  
+  try {
+    const data = fs.writeFileSync('test.txt', content)
+    //file written successfully
+  } catch (err) {
+    console.error(err)
+  }
     
 })
 
