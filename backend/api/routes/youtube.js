@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
     Subscription.updateOne(
         { channelID : 'UCOh4avN_YMs3JcUgBVhJfGg'},
         { $set: {
-            subscribe : true
+            subscribe : true,
+            data: res
         }},
         {upsert:true},
         function(error){console.log(error);}  
