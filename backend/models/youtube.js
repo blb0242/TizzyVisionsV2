@@ -9,4 +9,4 @@ const subscribeSchema = new Schema({
 	timestamps: true,
 });
 
-module.exports = mongoose.model("Subscribe", videoSchema, "subscribed")
+module.exports = mongoose.model("Subscribe", subscribeSchema, "subscribed")
